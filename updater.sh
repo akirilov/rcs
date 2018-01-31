@@ -9,6 +9,7 @@
 export DEBIAN_FRONTEND=noninteractive
 apt-get -q update
 apt-get -y -q dist-upgrade
+apt-get -y -q autoremove
 logger updater.sh ran successfully. Rebooting system
 init 6
 exit 0
