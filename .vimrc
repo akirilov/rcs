@@ -5,8 +5,8 @@ set background=dark
 
 " Tab settings
 set expandtab
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 filetype plugin indent on
 
 " Line numbering
