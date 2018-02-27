@@ -5,8 +5,8 @@ set background=dark
 
 " Tab settings
 set expandtab
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set softtabstop=4
 filetype plugin indent on
 
 " Line numbering
@@ -30,3 +30,12 @@ set modelines=0
 
 " QOL
 set scrolloff=3
+
+" Tabs
+map <C-t><up> :tabr<cr>
+map <C-t><down> :tabl<cr>
+map <C-t><left> :tabp<cr>
+map <C-t><right> :tabn<cr>
+
+" Timeouts
+set notimeout
