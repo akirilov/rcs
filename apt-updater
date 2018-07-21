@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# updater.sh - Weekly update script
+# apt-updater - Weekly update script
 # This script checks for the latest updates, downloads them, then reboots the system
 # Place this script in /etc/cron.weekly, ensure it is owned by root (chown root:root /etc/cron.weekly/updater.sh
 # Ensure the script has at least user execute permissions (chmod 700 /etc/cron.weekly/updater.sh
@@ -10,6 +10,6 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get -q update
 apt-get -y -q dist-upgrade
 apt-get -y -q autoremove
-logger updater.sh ran successfully. Rebooting system
+logger apt-updater ran successfully. Rebooting system
 init 6
 exit 0
