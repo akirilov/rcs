@@ -39,3 +39,8 @@ map <C-t><right> :tabn<cr>
 
 " Timeouts
 set notimeout
+
+" Highlight lines over 80 characters
+map <F3> :match ErrorMsg '\%>100v.\+'<cr>
+map <F4> :call clearmatches()<cr>
+map <F5> :set cursorline!<cr>
