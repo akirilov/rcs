@@ -11,7 +11,6 @@ filetype plugin indent on
 
 " Line numbering
 set number
-set relativenumber
 set ruler
 
 " Searching
