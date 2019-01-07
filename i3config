@@ -76,7 +76,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -127,7 +127,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # power settings
-set $Locker i3lock && sleep 1
+set $Locker i3lock -i ~/Pictures/lock.png && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (x) shutdown
 mode "$mode_system" {
@@ -178,4 +178,5 @@ bar {
         tray_output primary
 }
 
-exec --no-startup-id feh --bg-scale ~/Pictures/pexels-photo-531880.jpeg
+# desktop background
+exec --no-startup-id feh --bg-scale ~/Pictures/bg.png
