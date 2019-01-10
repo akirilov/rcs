@@ -12,6 +12,7 @@ filetype plugin indent on
 " Line numbering
 set number
 set ruler
+set cursorline
 
 " Searching
 set incsearch
@@ -39,7 +40,17 @@ map <C-t><right> :tabn<cr>
 " Timeouts
 set notimeout
 
-" Highlight lines over 80 characters
+" <F2> - Toggle cursorline
+map <F2> :set cursorline!<cr>
+" <F3> - Highlight lines over 100 characters
 map <F3> :match ErrorMsg '\%>100v.\+'<cr>
+" <F4> - Clear matches
 map <F4> :call clearmatches()<cr>
-map <F5> :set cursorline!<cr>
+
+" Plugins
+execute pathogen#infect()
+
+" <F5> - Nerdtree
+map <F5> :NERDTreeToggle<cr>
+" <F6> - Undotree
+map <F6> :UndotreeToggle<cr>
