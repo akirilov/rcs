@@ -41,7 +41,7 @@ map <C-t><right> :tabn<cr>
 set notimeout
 
 " <F2> - Toggle cursorline
-map <F2> :set paste!<cr> :set number!<cr>
+map <F2> :set paste!<cr>:set number!<cr>
 " <F3> - Highlight lines over 100 characters
 map <F3> :match ErrorMsg '\%>100v.\+'<cr>
 " <F4> - Clear matches
