@@ -4,4 +4,4 @@
 rsync -axuv ./home/ ~/
 
 # Sub-installations
-./subinstall-vim-plugins.sh
+./subinstall/install-vim-plugins.sh
