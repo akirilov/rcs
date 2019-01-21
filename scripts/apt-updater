@@ -10,6 +10,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get -q update
 apt-get -y -q dist-upgrade
 apt-get -y -q autoremove
-logger apt-updater ran successfully. Rebooting system
-init 6
+logger apt-updater ran successfully
+# logger rebooting system
+# init 6
 exit 0
