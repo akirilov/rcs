@@ -12,7 +12,6 @@ filetype plugin indent on
 " Line numbering
 set number
 set ruler
-set cursorline
 
 " Searching
 set incsearch
@@ -39,6 +38,10 @@ map <C-t><right> :tabn<cr>
 
 " Timeouts
 set notimeout
+
+" Toggle defaults
+set cursorline
+match ErrorMsg '\%>100v.\+'
 
 " <F2> - Toggle cursorline
 map <F2> :set paste!<cr>:set number!<cr>
