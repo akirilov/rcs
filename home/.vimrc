@@ -1,6 +1,7 @@
 " Colors
 syntax on
 set background=dark
+hi TabLineSel ctermfg=Black ctermbg=White
 "set t_Co=256
 
 " Tab settings
@@ -40,8 +41,14 @@ map <C-t><right> :tabn<cr>
 " Timeouts
 set notimeout
 
-" Toggle defaults
+" Enable long lines highlight by default
 match ErrorMsg '\%>100v.\+'
+
+" Mac compatibility
+let g:NERDTreeNodeDelimiter = "\u00a0"
+
+" Plugins
+execute pathogen#infect()
 
 " <F2> - Toggle cursorline
 map <F2> :set paste!<cr>:set number!<cr>
@@ -50,10 +57,8 @@ map <F3> :match ErrorMsg '\%>100v.\+'<cr>
 " <F4> - Clear matches
 map <F4> :call clearmatches()<cr>
 
-" Plugins
-execute pathogen#infect()
-
 " <F5> - Nerdtree
 map <F5> :NERDTreeToggle<cr>
+
 " <F6> - Undotree
 map <F6> :UndotreeToggle<cr>
