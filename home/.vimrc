@@ -20,8 +20,9 @@ set incsearch
 set hlsearch
 
 " Folding
-" set foldenable
-" set foldmethod=indent
+set foldenable
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview 
 
 " No compatibility
 set nocompatible
@@ -41,8 +42,9 @@ map <C-t><right> :tabn<cr>
 " Timeouts
 set notimeout
 
-" Enable long lines highlight by default
+" Enable long lines highlight/break by default
 match ErrorMsg '\%>100v.\+'
+set tw=100
 
 " Mac compatibility
 let g:NERDTreeNodeDelimiter = "\u00a0"
@@ -52,10 +54,10 @@ execute pathogen#infect()
 
 " <F2> - Toggle cursorline
 map <F2> :set paste!<cr>:set number!<cr>
-" <F3> - Highlight lines over 100 characters
-map <F3> :match ErrorMsg '\%>100v.\+'<cr>
+" <F3> - Highlight and break lines over 100 characters
+map <F3> :match ErrorMsg '\%>100v.\+'<cr>:set tw=100<cr>
 " <F4> - Clear matches
-map <F4> :call clearmatches()<cr>
+map <F4> :call clearmatches()<cr>:set tw=0<cr>
 
 " <F5> - Nerdtree
 map <F5> :NERDTreeToggle<cr>
