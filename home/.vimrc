@@ -1,3 +1,7 @@
+" ############
+" # Settings #
+" ############
+
 " Colors
 syntax on
 set background=dark
@@ -21,6 +25,8 @@ set hlsearch
 
 " Folding
 set foldenable
+
+" Save view
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview 
 
@@ -39,12 +45,8 @@ map <C-t><down> :tabl<cr>
 map <C-t><left> :tabp<cr>
 map <C-t><right> :tabn<cr>
 
-" Timeouts
+" No timeouts
 set notimeout
-
-" Enable long lines highlight/break by default
-match ErrorMsg '\%>100v.\+'
-set tw=100
 
 " Mac compatibility
 let g:NERDTreeNodeDelimiter = "\u00a0"
@@ -52,15 +54,37 @@ let g:NERDTreeNodeDelimiter = "\u00a0"
 " Plugins
 execute pathogen#infect()
 
+" #############
+" # Shortcuts #
+" #############
+
 " <F2> - Toggle cursorline
-map <F2> :set paste!<cr>:set number!<cr>
-" <F3> - Highlight and break lines over 100 characters
-map <F3> :match ErrorMsg '\%>100v.\+'<cr>:set tw=100<cr>
-" <F4> - Clear matches
-map <F4> :call clearmatches()<cr>:set tw=0<cr>
+noremap <F2> :set cursorline!<cr>
+
+" <F3> - Toggle copy/paste mode
+noremap <F3> :set paste!<cr>:set number!<cr>
+
+" <F4> - Highlight and break lines over 100 characters
+" Enable long lines highlight/break by default
+match ErrorMsg '\%>100v.\+'
+set tw=100
+" Add toggle function
+let s:text_break_flag=1
+noremap <F4> :call LineBreakToggle()<cr>
+function! LineBreakToggle()
+  if s:text_break_flag
+    set tw=0
+    call clearmatches()
+    let s:text_break_flag=0
+  else
+    set tw=100
+    call matchadd('ErrorMsg', '\%>100v.\+')
+    let s:text_break_flag=1
+  endif
+endfunction
 
 " <F5> - Nerdtree
-map <F5> :NERDTreeToggle<cr>
+noremap <F5> :NERDTreeToggle<cr>
 
 " <F6> - Undotree
-map <F6> :UndotreeToggle<cr>
+noremap <F6> :UndotreeToggle<cr>
