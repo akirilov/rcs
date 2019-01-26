@@ -29,9 +29,16 @@ set foldenable
 " Save view
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview 
+"
+" Enable long lines highlight/break by default
+set textwidth=100
+autocmd BufWinEnter *.* call matchadd('ErrorMsg', '\%>100v.\+')
 
 " No compatibility
 set nocompatible
+
+" Mac compatibility
+let g:NERDTreeNodeDelimiter = "\u00a0"
 
 " Security
 set modelines=0
@@ -50,9 +57,6 @@ noremap <C-t>n :tabnew<cr>
 " No timeouts
 set notimeout
 
-" Mac compatibility
-let g:NERDTreeNodeDelimiter = "\u00a0"
-
 " Plugins
 execute pathogen#infect()
 
@@ -67,19 +71,16 @@ noremap <F2> :set cursorline!<cr>
 noremap <F3> :set paste!<cr>:set number!<cr>
 
 " <F4> - Highlight and break lines over 100 characters
-" Enable long lines highlight/break by default
-set tw=100
-autocmd BufWinEnter *.* call matchadd('ErrorMsg', '\%>100v.\+')
 " Add toggle function
 let s:text_break_flag=1
 noremap <F4> :call LineBreakToggle()<cr>
 function! LineBreakToggle()
   if s:text_break_flag
-    set tw=0
+    set textwidth=0
     call clearmatches()
     let s:text_break_flag=0
   else
-    set tw=100
+    set textwidth=100
     call matchadd('ErrorMsg', '\%>100v.\+')
     let s:text_break_flag=1
   endif
