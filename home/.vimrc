@@ -27,6 +27,7 @@ set hlsearch
 set foldenable
 
 " Save view
+set viewoptions-=options
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview 
 "
