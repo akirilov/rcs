@@ -51,6 +51,14 @@ noremap <C-t><up> :tabr<cr>
 noremap <C-t><down> :tabl<cr>
 noremap <C-t><left> :tabp<cr>
 noremap <C-t><right> :tabn<cr>
+noremap <C-t>h :tabp<cr>
+noremap <C-t>j :tabl<cr>
+noremap <C-t>k :tabr<cr>
+noremap <C-t>l :tabn<cr>
+noremap <C-t>H :tabm -1<cr>
+noremap <C-t>J :tabm<cr>
+noremap <C-t>K :tabm 0<cr>
+noremap <C-t>L :tabm +1<cr>
 noremap <C-t><C-t> :tabn<cr>
 noremap <C-t>n :tabnew<cr>
 
