@@ -69,8 +69,9 @@ noremap <F3> :set paste!<cr>:set number!<cr>
 " <F4> - Highlight and break lines over 100 characters
 " Enable long lines highlight/break by default
 set tw=100
+autocmd BufWinEnter *.* call matchadd('ErrorMsg', '\%>100v.\+')
 " Add toggle function
-let s:text_break_flag=0
+let s:text_break_flag=1
 noremap <F4> :call LineBreakToggle()<cr>
 function! LineBreakToggle()
   if s:text_break_flag
