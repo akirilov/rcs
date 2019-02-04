@@ -44,8 +44,14 @@ let g:NERDTreeNodeDelimiter = "\u00a0"
 " Security
 set modelines=0
 
-" QOL
+" Scroll at bottom 3
 set scrolloff=3
+
+" Move by screen line, not buffer line
+noremap <up> gk
+noremap <down> gj
+noremap <A-up> k
+noremap <A-down> j
 
 " Tabs
 noremap <C-t><up> :tabr<cr>
