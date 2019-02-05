@@ -122,4 +122,4 @@ endfunction
 noremap <F5> :NERDTreeToggle<cr>
 
 " <F6> - Undotree
-noremap <F6> :UndotreeToggle<cr>
+noremap <F6> :UndotreeToggle<cr>:UndotreeFocus<cr>
