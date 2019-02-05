@@ -30,11 +30,17 @@ set foldenable
 " Save view
 set viewoptions-=options
 autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview 
-"
+autocmd BufWinEnter *.* silent loadview
+
 " Enable long lines highlight/break by default
 set textwidth=100
-autocmd BufWinEnter *.* call matchadd('ErrorMsg', '\%>100v.\+')
+autocmd BufWinEnter *.* call matchadd('ErrorMsg', '\%>100v.\+', 10, 1001)
+
+" Enable tab highlight
+autocmd BufWinEnter *.* call matchadd('ErrorMsg', '\t', 10, 1002)
+
+" Highlight trailing spaces by default
+autocmd BufWinEnter *.* call matchadd('ErrorMsg', '\s\+$')
 
 " No compatibility
 set nocompatible
@@ -76,11 +82,25 @@ execute pathogen#infect()
 " # Shortcuts #
 " #############
 
-" <F2> - Toggle cursorline
-noremap <F2> :set cursorline!<cr>
+" <F1> - Toggle cursorline
+noremap <F1> :set cursorline!<cr>
 
-" <F3> - Toggle copy/paste mode
-noremap <F3> :set paste!<cr>:set number!<cr>
+" <F2> - Toggle copy/paste mode
+noremap <F2> :set paste!<cr>:set number!<cr>
+
+" <F3> - Highlight Tabs
+" Add toggle function
+let s:hltabs_flag=1
+noremap <F3> :call HlTabs()<cr>
+function! HlTabs()
+  if s:hltabs_flag
+    call matchdelete(1002)
+    let s:hltabs_flag=0
+  else
+    call matchadd('ErrorMsg', '\t', 10, 1002)
+    let s:hltabs_flag=1
+  endif
+endfunction
 
 " <F4> - Highlight and break lines over 100 characters
 " Add toggle function
@@ -89,11 +109,11 @@ noremap <F4> :call LineBreakToggle()<cr>
 function! LineBreakToggle()
   if s:text_break_flag
     set textwidth=0
-    call clearmatches()
+    call matchdelete(1001)
     let s:text_break_flag=0
   else
     set textwidth=100
-    call matchadd('ErrorMsg', '\%>100v.\+')
+    call matchadd('ErrorMsg', '\%>100v.\+', 10, 1001)
     let s:text_break_flag=1
   endif
 endfunction
