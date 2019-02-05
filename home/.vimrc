@@ -12,6 +12,7 @@ hi TabLineSel ctermfg=Black ctermbg=White
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+set tabstop=2
 filetype plugin indent on
 
 " Line numbering
