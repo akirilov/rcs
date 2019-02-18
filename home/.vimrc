@@ -34,11 +34,11 @@ autocmd BufWinEnter *.* loadview
 
 " Enable long lines highlight/break by default
 set textwidth=100
-autocmd BufWinEnter *.* call matchadd('ErrorMsg', '\%>100v.\+', 10, 1001)
+autocmd BufWinEnter *.* silent! call matchadd('ErrorMsg', '\%>100v.\+', 10, 1001)
 
 " Enable tab highlight
 autocmd BufWinEnter *.* let b:hltabs_flag=1
-autocmd BufWinEnter *.* call matchadd('ErrorMsg', '\t', 10, 1002)
+autocmd BufWinEnter *.* silent! call matchadd('ErrorMsg', '\t', 10, 1002)
 
 " Highlight trailing spaces by default
 autocmd BufWinEnter *.* let b:text_break_flag=1
