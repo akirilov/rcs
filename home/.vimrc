@@ -32,16 +32,16 @@ set viewoptions-=options
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* loadview
 
-" Enable long lines highlight/break by default
+" Enable long lines highlight/break by default (if this option is on, this line should be highlighted)
 set textwidth=100
 autocmd BufWinEnter *.* let b:text_break_flag=0
 autocmd BufWinEnter *.* silent! call LineBreakToggle()
 
-" Enable tab highlight
+" Enable tab highlight (	)
 autocmd BufWinEnter *.* let b:hltabs_flag=0
 autocmd BufWinEnter *.* silent! call HlTabs()
 
-" Highlight trailing spaces by default
+" Highlight trailing spaces by default:  
 autocmd BufWinEnter *.* call matchadd('ErrorMsg', '\s\+$')
 
 " No compatibility
