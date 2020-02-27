@@ -1,14 +1,14 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-	name = akirilov
-	email = atanas_kirilov@hotmail.com
+  name = akirilov
+  email = atanas_kirilov@hotmail.com
 [color]
-	ui = auto
+  ui = auto
 [merge]
-	tool = vimdiff
-	conflictstyle = diff3
+  tool = vimdiff
+  conflictstyle = diff3
 [mergetool]
-	prompt = false
+  prompt = false
 [pull]
   rebase = true
