@@ -1,0 +1,16 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+  name = akirilov
+  email = ***REMOVED***
+[color]
+  ui = auto
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
+[mergetool]
+  prompt = false
+[pull]
+  rebase = true
+[submodule]
+  recurse = true
