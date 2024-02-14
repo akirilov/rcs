@@ -14,3 +14,12 @@
   rebase = true
 [submodule]
   recurse = true
+[diff]
+  tool = vimdiff3
+[column]
+  ui = auto
+[branch]
+  sort = -committerdate
+[alias]
+  fpush = push --force-with-lease
+  golog = log --graph --oneline
