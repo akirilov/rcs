@@ -1,1 +1,1 @@
-sudo apt install feh i3 i3status i3lock
+sudo apt install feh neofetch i3 i3status
