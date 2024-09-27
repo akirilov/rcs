@@ -12,6 +12,9 @@
   prompt = false
 [pull]
   rebase = true
+  autostash = true
+[rebase]
+  autostach = true
 [submodule]
   recurse = true
 [diff]
