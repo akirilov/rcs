@@ -1,11 +1,8 @@
 #!/bin/bash
 
-# Ubuntu sub-install
-if uname -a | grep "Ubuntu";
-then
-  ./subinstall/install-apt-core.sh
-  ./subinstall/install-apt-extra.sh
-fi
+# Apt sub-install
+./subinstall/install-apt-core.sh
+./subinstall/install-apt-extra.sh
 
 # Generic sub-install
 ./subinstall/install-vim-plugins.sh

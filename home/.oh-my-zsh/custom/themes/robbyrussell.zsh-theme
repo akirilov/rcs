@@ -9,5 +9,3 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 setopt noauto_pushd
 
 alias l='ls -F'
-
-neofetch
