@@ -9,4 +9,4 @@
 ./subinstall/install-omz.sh
 
 # Install dotfiles
-rsync -axuv ./home/ ~/
+./subinstall/install-dotfiles.sh

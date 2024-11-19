@@ -1,1 +1,1 @@
-sudo apt install curl git vim net-tools binutils zsh
+sudo apt install curl git vim net-tools binutils zsh tmux
